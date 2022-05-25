@@ -6,6 +6,7 @@
   * [Installation](#installation)
   * [Supported Image Formats](#supported-image-formats)
   * [Shortcuts and Features](#shortcuts-and-features)
+  * [License](#license)
 
 ## About
 This is an ***image manipulation program*** made with **Python 3**
@@ -61,3 +62,5 @@ python main.py
 |Hold **Shift**               |Mouse Drag Navigation Mode       |
 |Press **F11**                |Toggle Fullscreen                |
 
+## License
+[MIT](https://opensource.org/licenses/MIT)
