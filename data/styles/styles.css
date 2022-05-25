@@ -1,0 +1,5 @@
+/* Qt Style Sheet */
+QStatusBar QLabel {
+    margin-right: 2px;
+    text-align: center;
+}
