@@ -153,29 +153,35 @@ class ImageEditorResize(Ui_ResizeDialog, QDialog):
         self.widthBox.setValue(width)
         self.heightBox.setValue(height)
 
-        self.widthBox.valueChanged.connect(self.keep_aspect_ratio_when_width_changes)
-        self.heightBox.valueChanged.connect(self.keep_aspect_ratio_when_height_changes)
+        self.widthBox.valueChanged.connect(self.handle_width_changes)
+        self.heightBox.valueChanged.connect(self.handle_height_changes)
 
         self.submitButton.accepted.connect(self.accept)
         self.widthBox.setFocus()
     
-    def keep_aspect_ratio_when_width_changes(self) -> None:
+    def handle_width_changes(self) -> None:
         """Called when width is modified, keeping the height aspect ratio"""
-        if not self.keepAspectRatio.isChecked():
-            return
+        width_value = int(self.widthBox.value())
 
-        self.heightBox.blockSignals(True)
-        self.heightBox.setValue(int(self.height_ratio * self.widthBox.value()))
-        self.heightBox.blockSignals(False)
+        if self.keepAspectRatio.isChecked():
+            self.heightBox.blockSignals(True)
+            self.heightBox.setValue(int(self.height_ratio * width_value))
+            self.heightBox.blockSignals(False)
+
+        if (width_value > 4096):
+            self.widthBox.setValue(4096)
     
-    def keep_aspect_ratio_when_height_changes(self) -> None:
+    def handle_height_changes(self) -> None:
         """Called when height is modified, keeping the width aspect ratio"""
-        if not self.keepAspectRatio.isChecked():
-            return
-        
-        self.widthBox.blockSignals(True)
-        self.widthBox.setValue(int(self.width_ratio * self.heightBox.value()))
-        self.widthBox.blockSignals(False)
+        height_value = int(self.heightBox.value())
+
+        if self.keepAspectRatio.isChecked():
+            self.widthBox.blockSignals(True)
+            self.widthBox.setValue(int(self.width_ratio * self.height_value.value()))
+            self.widthBox.blockSignals(False)
+
+        if (height_value > 4096):
+            self.heightBox.setValue(4096)
     
     @property
     def info(self) -> Tuple[int, int]:
