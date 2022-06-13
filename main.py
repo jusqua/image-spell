@@ -170,7 +170,11 @@ class ImageEditor(ImageEditorMainWindow):
             if width == new_width and new_height == height:
                 return True
         
-        pixmap = self.engine.pixmap.scaled(new_width, new_height)
+        try:
+            pixmap = self.engine.pixmap.scaled(new_width, new_height)
+        except UnboundLocalError:
+            return
+
         self.engine.add(pixmap)
 
     @update
