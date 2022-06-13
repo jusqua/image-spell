@@ -361,7 +361,7 @@ class ImageEditor(ImageEditorMainWindow):
 
     def about(self) -> None:
         """About the program"""
-        repo = 'href="https://github.com/jusqua"'
+        repo = 'href="https://gitlab.com/jusqua"'
         license = 'href="https://opensource.org/licenses/MIT"'
         a = 'style="text-decoration: none; color: crimson;"'
         p = 'style="margin: 0px; text-align: justify;"'
