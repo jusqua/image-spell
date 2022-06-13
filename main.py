@@ -357,15 +357,15 @@ class ImageEditor(ImageEditorMainWindow):
 
     def about(self) -> None:
         """About the program"""
-        github = 'href="https://github.com/jusqua"'
-        mit_license = 'href="https://opensource.org/licenses/MIT"'
+        repo = 'href="https://github.com/jusqua"'
+        license = 'href="https://opensource.org/licenses/MIT"'
         a = 'style="text-decoration: none; color: crimson;"'
         p = 'style="margin: 0px; text-align: justify;"'
         h = 'style="text-align: center;"'
         QMessageBox.about(
             self.centralwidget,
             "About",
-            f"<h3 {h}>Hello world from <a {a} {github}>Jusqua</a>!</h3>"
+            f"<h3 {h}>Hello world from <a {a} {repo}>jusqua</a>!</h3>"
             f"<p {p}>This program is a experience for learn Python3 and Qt,</p>"
             f"<p {p}>and I want to implement such features to this project yet,</p>"
             f"<p {p}>feel free to use and abuse this code as well.</p>"
@@ -373,7 +373,7 @@ class ImageEditor(ImageEditorMainWindow):
             f"<p {p}>Press <b>Ctrl + Mouse Wheel</b> to Zoom In/Out</p>"
             f"<p {p}>Press <b>Shift + Mouse</b> to Hand Drag Navigate</p>"
             f"<p {p}>Press <b>F11</b> to Toogle Fullscreen</p>"
-            f"<h5 {h}>Licenced under <a {a} {mit_license}>MIT Licence</a></h5>"
+            f"<h5 {h}>Licenced under <a {a} {license}>MIT Licence</a></h5>"
             f"<h5 {h}>Copyright &copy; Ádrian Gama 2021</h5>"
         )
 
