@@ -11,7 +11,7 @@ class ImageEditorMainWindow(Ui_MainWindow, QMainWindow):
         """Initializes the class"""
         super().__init__(parent)
         
-        self.window_title = "egamI Spell"
+        self.window_title = "Image Spell"
 
         self.read_only = False
         self.supported_formats = ["JPG", "JPEG", "PNG", "BMP", "PPM"]
