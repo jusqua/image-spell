@@ -93,7 +93,7 @@ class ImageEditorMainWindow(Ui_MainWindow, QMainWindow):
         self.setWindowTitle(self.window_title)
         self.setWindowIcon(QIcon("data/icons/logo.png"))
         self.setWindowState(Qt.WindowMaximized)
-        with open(f"data/styles/styles.css") as file:
+        with open(f"data/styles/styles.qss") as file:
             self.setStyleSheet(file.read())
 
         self.actionOpen = self.toolbar_action(QIcon("data/icons/open.png"), "Open", "Open image file", False, shortcut="Ctrl+O")
